@@ -1,0 +1,27 @@
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "22.x"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@ubittz"
+      - uses: technote-space/package-version-check-action@v1
+        with:
+          COMMIT_DISABLED: 1
+      - run: npm install
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_PUBLISH_KEY }}
