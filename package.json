@@ -1,5 +1,5 @@
 {
-  "name": "ubittz-web-common",
+  "name": "web-common",
   "version": "1.0.0",
   "description": "Ubittz Web Common Utils Package",
   "main": "dist/index.js",
@@ -7,15 +7,33 @@
   "author": "wongil12 <judgevi52@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "tsup",
     "dev:package": "tsup src/index.tsx--watch"
   },
-  "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tsup": "^8.5.0",
-    "typescript": "^5.8.3"
+  "peerDependencies": {
+    "axios": ">=1.9.0",
+    "react": ">=18.3.1",
+    "react-dom": ">=18.3.1",
+    "swr": ">=2.3.4"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@swc/core": "^1.13.2",
+    "@types/qs": "^6.14.0",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "@ubittz/web-config": "^1.0.1",
+    "axios": "^1.9.0",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2",
+    "swr": "^2.3.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0"
+  },
+  "dependencies": {
+    "qs": "^6.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
+  }
 }
