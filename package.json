@@ -1,11 +1,10 @@
 {
   "name": "@ubittz/web-common",
   "version": "1.0.0",
-  "description": "Ubittz Web Common Utils Package",
-  "repository": "git@github.com:ubittz/ubittz-web-common.git",
+  "description": "Ubittz Web Common Util Package",
   "author": "wongil12 <judgevi52@gmail.com>",
   "publishConfig": {
-    "@ubittz:registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "license": "MIT",
   "type": "module",
@@ -31,6 +30,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubittz/web-common.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ubittz/web-common/issues"
+  },
+  "homepage": "https://github.com/ubittz/web-common",
   "peerDependencies": {
     "axios": ">=1.9.0",
     "react": ">=18.3.1",
@@ -56,5 +63,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
