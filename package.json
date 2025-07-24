@@ -1,28 +1,36 @@
 {
-  "name": "web-common",
+  "name": "@ubittz/web-common",
   "version": "1.0.0",
   "description": "Ubittz Web Common Utils Package",
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
   "repository": "git@github.com:ubittz/ubittz-web-common.git",
   "author": "wongil12 <judgevi52@gmail.com>",
+  "publishConfig": {
+    "@ubittz:registry": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "tsup",
     "dev:package": "tsup src/index.tsx--watch"
   },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
   "peerDependencies": {
     "axios": ">=1.9.0",
     "react": ">=18.3.1",

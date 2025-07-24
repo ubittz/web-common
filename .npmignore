@@ -1,0 +1,6 @@
+src/
+public/
+*.config.*
+*.ts
+*.tsx
+vite.config.ts
