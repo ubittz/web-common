@@ -7,7 +7,7 @@ const responseInterceptor = (axiosRes: AxiosResponse) => {
   // eslint-disable-next-line
   const response: UbittzResponse<any> = {
     ...axiosRes,
-    ok: true,
+    ok: Math.floor(axiosRes.status / 100) === 2,
   };
 
   return response;
@@ -16,7 +16,7 @@ const responseInterceptor = (axiosRes: AxiosResponse) => {
 const errorInterceptor = async (axiosError: AxiosError) => {
   const error: UbittzErrorResponse = {
     ...axiosError,
-    ok: false,
+    ok: Math.floor((axiosError.status ?? 500) / 100) === 2,
   };
   return error;
 };
