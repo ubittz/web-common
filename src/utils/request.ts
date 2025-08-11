@@ -18,18 +18,20 @@ const errorInterceptor = async (axiosError: AxiosError) => {
     ...axiosError,
     ok: Math.floor((axiosError.status ?? 500) / 100) === 2,
   };
+  
   return error;
 };
 
 const generatorRequest = (auth: boolean = false) => {
   axios.interceptors.response.use(responseInterceptor, errorInterceptor);
 
+  
   const generator =
-    (method: Method) =>
+  (method: Method) =>
     // eslint-disable-next-line
-    async <Data = any>(path: string, config?: AxiosRequestConfig): Promise<UbittzResponse<Data>> => {
-      const accessToken = getAccessToken();
-
+  async <Data = any>(path: string, config?: AxiosRequestConfig): Promise<UbittzResponse<Data>> => {
+    const accessToken = getAccessToken();
+    
       const newConfig: AxiosRequestConfig = {
         ...config,
         headers: {

@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/ubittz/web-common",
   "peerDependencies": {
-    "axios": ">=1.9.0",
+    "axios": "^1.9.0",
     "react": ">=18.3.1",
     "react-dom": ">=18.3.1",
     "swr": ">=2.3.4"
@@ -50,7 +50,6 @@
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@ubittz/web-config": "^1.0.1",
-    "axios": "^1.9.0",
     "eslint": "^9.31.0",
     "prettier": "^3.6.2",
     "swr": "^2.3.4",
@@ -60,6 +59,7 @@
   },
   "dependencies": {
     "qs": "^6.14.0",
+    "axios": "^1.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"
