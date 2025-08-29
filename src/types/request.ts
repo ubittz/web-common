@@ -34,5 +34,5 @@ export type SWRConfig<D, Q = Record<string, any>> = SWRConfiguration<UbittzRespo
 
 export interface PageQuery {
   // 0부터 시작.
-  pageNo?: number;
+  pageNo: number;
 }
