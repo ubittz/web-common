@@ -5,7 +5,7 @@ export interface UbittzResponse<Data> extends AxiosResponse<Data> {
   ok: boolean;
 }
 
-export interface UbittzErrorResponse extends AxiosError {
+export interface UbittzErrorResponse<Data = {errorMessage?: string;}> extends AxiosError<Data> {
   ok: boolean;
 }
 

@@ -14,7 +14,8 @@ const responseInterceptor = (axiosRes: AxiosResponse) => {
 };
 
 const errorInterceptor = async (axiosError: AxiosError) => {
-  const error: UbittzErrorResponse = {
+  // eslint-disable-next-line
+  const error: UbittzErrorResponse<any> = {
     ...axiosError,
     ok: Math.floor((axiosError.status ?? 500) / 100) === 2,
   };
@@ -67,3 +68,8 @@ export const fetcher = async (url: string) => {
 
   return res;
 };
+
+// eslint-disable-next-line
+export const isUbittzError = <Data = any> (payload: any): payload is UbittzErrorResponse<Data> => {
+  return payload !== null && payload.ok === false
+}

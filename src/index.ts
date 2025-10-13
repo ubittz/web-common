@@ -17,6 +17,7 @@ import {
   unAuthenticatedRequest,
   authenticatedRequest,
   fetcher,
+  isUbittzError
 } from './utils';
 
 export {
@@ -34,6 +35,7 @@ export {
   clearToken,
   unAuthenticatedRequest,
   authenticatedRequest,
+  isUbittzError,
   fetcher,
   useSearch,
   useQueryParams,
@@ -58,6 +60,7 @@ export default {
   clearToken,
   unAuthenticatedRequest,
   authenticatedRequest,
+  isUbittzError,
   fetcher,
   useSearch,
   useQueryParams,
