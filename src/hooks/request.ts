@@ -21,6 +21,6 @@ export const useSWRList = <D = any, Q extends Record<string, any> = Record<strin
 };
 
 export const useSWRDetail = <D>(path: string, config?: SWRConfig<D>) => {
-  const response = useSWR<UbittzResponse<D>>(config?.skip ? null : path, config);
+  const response = useSWR<UbittzResponse<D>>(config?.skip ? null : `${path}?${qs.stringify(config?.query ?? {})}`, config);
   return response;
 };
