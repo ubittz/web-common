@@ -36,8 +36,8 @@ const generatorRequest = (auth: boolean = false) => {
       const newConfig: AxiosRequestConfig = {
         ...config,
         headers: {
-          ...config?.headers,
           Authorization: auth ? accessToken && `Bearer ${accessToken}` : undefined,
+          ...config?.headers,
         },
         method,
       };
