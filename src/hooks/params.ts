@@ -42,7 +42,9 @@ export const useQueryParams = <TQuery extends object>(
       searchParams.set(String(key), String(value));
     }
 
-    setSearchParams(qs.stringify(newQuery, { arrayFormat: 'comma' }));
+    setSearchParams(qs.stringify(newQuery, { arrayFormat: 'comma' }), {
+      replace
+    });
   };
 
   const updateAllQueries = (updates: Partial<TQuery>, replace?: boolean) => {
